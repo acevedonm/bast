@@ -61,7 +61,7 @@ function getComparator<Key extends keyof any>(
     : (a, b) => -descendingComparator(a, b, orderBy);
 }
 
-export default function EnhancedTable({ hearders, data, title }) {
+export default function EnhancedTable({ hearders, data, title }: any) {
   /*Otros componentes */
 
   /**Componente principal */
@@ -83,7 +83,7 @@ export default function EnhancedTable({ hearders, data, title }) {
 
   const handleSelectAllClick = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.checked) {
-      const newSelecteds = data.map((n) => n._id);
+      const newSelecteds = data.map((n: Data) => n._id);
       setSelected(newSelecteds);
       return;
     }

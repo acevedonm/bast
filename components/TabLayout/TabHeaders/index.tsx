@@ -11,7 +11,12 @@ function a11yProps(index: number) {
   };
 }
 
-export default function TabHeaders({ labels, children, state, handleChange }) {
+export default function TabHeaders({
+  labels,
+  children,
+  state,
+  handleChange,
+}: any) {
   return (
     <Box sx={{ width: "100%" }}>
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
@@ -20,7 +25,7 @@ export default function TabHeaders({ labels, children, state, handleChange }) {
           onChange={handleChange}
           aria-label="basic tabs example"
         >
-          {labels.map((label, index) => (
+          {labels.map((label: string, index: number) => (
             <Tab label={label} key={index} {...a11yProps(index)} />
           ))}
         </Tabs>

@@ -18,12 +18,7 @@ function index() {
         sx={{
           height: "100vh",
         }}
-      >
-        <img
-          style={{ width: "100%" }}
-          src="https://images.pexels.com/photos/3184450/pexels-photo-3184450.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-        ></img>
-      </Box>
+      ></Box>
     </>
   );
 }

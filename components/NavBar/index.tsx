@@ -34,13 +34,13 @@ const NavBar = () => {
     setAnchorElUser(event.currentTarget);
   };
 
-  const handleCloseNavMenu = (direction) => {
+  const handleCloseNavMenu = (direction: string) => {
     console.log("click");
     setAnchorElNav(null);
     router.push(`../${direction}`);
   };
 
-  const handleNavegation = (direction) => {
+  const handleNavegation = (direction: string) => {
     console.log("click");
     setAnchorElNav(null);
     router.push(`../${direction}`);
@@ -137,8 +137,11 @@ const NavBar = () => {
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}
               >
-                {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseNavMenu}>
+                {settings.map((setting: string) => (
+                  <MenuItem
+                    key={setting}
+                    onClick={() => handleCloseNavMenu(setting)}
+                  >
                     <Typography textAlign="center">{setting}</Typography>
                   </MenuItem>
                 ))}

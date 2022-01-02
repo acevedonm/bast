@@ -35,7 +35,7 @@ function createData(
   };
 }
 
-function getRandomInt(min, max) {
+function getRandomInt(min: number, max: number) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
@@ -127,9 +127,9 @@ interface EnhancedTableProps {
   rowCount: number;
 }
 
-function index() {
+function Index() {
   const array = ["Detalle", "Transacciones"];
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0);
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
@@ -153,4 +153,4 @@ function index() {
   );
 }
 
-export default index;
+export default Index;

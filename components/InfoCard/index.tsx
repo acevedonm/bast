@@ -6,7 +6,11 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-export default function InfoCard({ propietario, inquilino }) {
+interface props {
+  propietario: string;
+  inquilino: string;
+}
+export default function InfoCard({ propietario, inquilino }: props) {
   return (
     <Card sx={{ minWidth: 275, marginTop: "5px" }}>
       <CardContent>

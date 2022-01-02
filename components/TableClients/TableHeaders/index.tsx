@@ -24,7 +24,7 @@ const TableHeaders = ({
   rowCount,
   onRequestSort,
   headers,
-}) => {
+}: any) => {
   const createSortHandler =
     (property: keyof Data) => (event: React.MouseEvent<unknown>) => {
       onRequestSort(event, property);
@@ -44,7 +44,7 @@ const TableHeaders = ({
             }}
           />
         </TableCell>
-        {headers.map((headCell) => (
+        {headers.map((headCell: any) => (
           <TableCell
             key={headCell.id}
             align={headCell.numeric ? "right" : "left"}

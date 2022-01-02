@@ -54,12 +54,14 @@ const headers: readonly HeadCell[] = [
   },
 ];
 
-function index() {
+function Index() {
   useEffect(() => {
     fetch("http://localhost:3001/clients")
       .then((response) => response.json())
       .then((data) => {
-        let owners = data.filter((client) => client.types.includes("OWNER"));
+        let owners = data.filter((client: any) =>
+          client.types.includes("OWNER")
+        );
         setOwners(owners);
         console.log({ owners });
       });
@@ -86,4 +88,4 @@ function index() {
   );
 }
 
-export default index;
+export default Index;
