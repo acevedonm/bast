@@ -1,7 +1,7 @@
 import { Box, Button } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import AddIcon from "@mui/icons-material/Add";
-
+import { api } from "../api/api";
 import NavBar from "../../components/NavBar";
 import TableContent from "../../components/TableClients/TableContent";
 
@@ -56,15 +56,13 @@ const headers: readonly HeadCell[] = [
 
 function Index() {
   useEffect(() => {
-    fetch("http://localhost:3001/clients")
-      .then((response) => response.json())
-      .then((data) => {
-        let owners = data.filter((client: any) =>
-          client.types.includes("OWNER")
-        );
-        setOwners(owners);
-        console.log({ owners });
-      });
+    api.get("/clients").then((response) => {
+      let clients = response.data;
+      let owners = clients.filter((client: any) =>
+        client.types.includes("OWNER")
+      );
+      setOwners(owners);
+    });
   }, []);
   const [owners, setOwners] = useState([]);
   return (
