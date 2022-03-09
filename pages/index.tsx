@@ -8,6 +8,7 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
+import { LoginLayout } from "../components/Layout/LoginLayout";
 import { useRouter } from "next/router";
 
 export default function Login() {
@@ -16,7 +17,7 @@ export default function Login() {
     router.push("/home");
   };
   return (
-    <>
+    <LoginLayout>
       <Container sx={{ height: "100vh", width: "50%" }}>
         <Grid
           container
@@ -25,16 +26,10 @@ export default function Login() {
           alignItems="center"
         >
           <Grid columns={12}>
-            {" "}
-            <Typography
-              variant="h4"
-              align="center" /*className={styles.title}*/
-            >
-              Bienvenido a{" "}
-              <a href="https://nextjs.org">Bast! Sistema inmobiliario</a>
+            <Typography variant="h4" align="center">
+              Bast! Sistema inmobiliario
             </Typography>
           </Grid>
-
           <FormControl>
             <InputLabel htmlFor="my-input">Email</InputLabel>
             <Input id="my-input" aria-describedby="my-helper-text" />
@@ -49,15 +44,6 @@ export default function Login() {
           <Button onClick={login}>Login</Button>
         </Grid>
       </Container>
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Developed by @Acevedonm
-        </a>
-      </footer>
-    </>
+    </LoginLayout>
   );
 }
